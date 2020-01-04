@@ -1,0 +1,58 @@
+.chess {
+
+    &__table {
+        //display: grid;
+        //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        display: table;
+        width: auto;
+        margin: 0 auto;
+        //position: relative;
+    }
+
+    &__row {
+        display: table-row;
+
+        &:nth-child(even) {
+
+            .chess__cell {
+                &:nth-child(odd) {
+                    background: yellow;
+                    color: lightgray;
+
+                    &:hover {
+                        background: red;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+
+            .chess__cell {
+                &:nth-child(even) {
+                    background: yellow;
+                    color: lightgray;
+
+                    &:hover {
+                        background: red;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .chess__cell {
+            color: #fff;
+            display: table-cell;
+            background: lightgray;
+            margin: 1rem;
+            padding: 1rem;
+
+            &:hover {
+                background: red;
+                color: #fff;
+            }
+        }
+    }
+}
