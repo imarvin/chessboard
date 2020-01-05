@@ -6,12 +6,12 @@ export const ChessTable = () => {
     let rows = [..."12345678"];
     return (
         <div className="chess__table">
-            {rows.map(row => {
+            {rows.reverse().map(row => {
                 return (
                     <div className="chess__row">
                         {cols.map(col => {
                             return (
-                                <div className="chess__cell" data-cell={`${col}${row}`}>{col}{row}</div>
+                                <div className="chess__cell" data-cell={`${col}${row}`} data-row={row} data-col={col}><span>{col}{row}</span></div>
                             )
                         })}
                     </div>
