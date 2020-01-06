@@ -27,6 +27,11 @@ $screen-xl-min: 1220px; // extra large desktops
         &:nth-child(odd) .chess__cell:nth-child(even) {
             background: yellow;
             color: lightgray;
+
+            &:hover {
+                background: red;
+                color: #fff;
+            }
         }
         
         // column labels ie. A B C D E F G H
@@ -37,9 +42,8 @@ $screen-xl-min: 1220px; // extra large desktops
                 left: 0;
             }
         }
-
+        // row labels ie. 1 2 3 4 5 6 7 8
         .chess__cell {
-            // row labels ie. 1 2 3 4 5 6 7 8
             &:first-child:before {
                 content: attr(data-row);
                 top: 0;
@@ -71,7 +75,7 @@ $screen-xl-min: 1220px; // extra large desktops
         &:hover {
             background: red;
             color: #fff;
-            
+
             > span {
                 opacity: 1;
             }
