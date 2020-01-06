@@ -1,22 +1,21 @@
 import React from 'react';
 import './index.scss';
+import { ChessTableCell } from '../ChessTableCell';
 
 export const ChessTable = () => {
     let cols = [..."abcdefgh"];
     let rows = [..."12345678"];
     return (
         <div className="chess__table">
-            {rows.reverse().map(row => {
-                return (
-                    <div key={row} className="chess__row">
-                        {cols.map(col => {
-                            return (
-                                <div key={col+row} className="chess__cell" data-cell={col+row} data-row={row} data-col={col}><span>{col}{row}</span></div>
-                            )
-                        })}
-                    </div>
-                )
-            })}
+            {rows && 
+                rows.reverse().map( (row, i) => {
+                    return (
+                        <div key={row+i} className="chess__row">
+                            <ChessTableCell key={row} row={row} cols={cols} />
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 };
